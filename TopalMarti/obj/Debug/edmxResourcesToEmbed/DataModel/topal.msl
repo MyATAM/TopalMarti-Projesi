@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TopalMartiModelStoreContainer" CdmEntityContainer="TopalMartiEntities2">
+    <EntitySetMapping Name="Adresler">
+      <EntityTypeMapping TypeName="TopalMartiModel.Adresler">
+        <MappingFragment StoreEntitySet="Adresler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Il" ColumnName="Il" />
+          <ScalarProperty Name="Ilce" ColumnName="Ilce" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="FirmaID" ColumnName="FirmaID" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AltKategoriler">
+      <EntityTypeMapping TypeName="TopalMartiModel.AltKategoriler">
+        <MappingFragment StoreEntitySet="AltKategoriler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AltKategoriAd" ColumnName="AltKategoriAd" />
+          <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AltOzellik">
+      <EntityTypeMapping TypeName="TopalMartiModel.AltOzellik">
+        <MappingFragment StoreEntitySet="AltOzellik">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AltOzellikAdi" ColumnName="AltOzellikAdi" />
+          <ScalarProperty Name="OzellikID" ColumnName="OzellikID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Firma_Urunler">
+      <EntityTypeMapping TypeName="TopalMartiModel.Firma_Urunler">
+        <MappingFragment StoreEntitySet="Firma_Urunler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirmaNo" ColumnName="FirmaNo" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="Stok" ColumnName="Stok" />
+          <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
+          <ScalarProperty Name="UrunBilgisi" ColumnName="UrunBilgisi" />
+          <ScalarProperty Name="UrunResimYolu1" ColumnName="UrunResimYolu1" />
+          <ScalarProperty Name="UrunResimYolu2" ColumnName="UrunResimYolu2" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Firmalar">
+      <EntityTypeMapping TypeName="TopalMartiModel.Firmalar">
+        <MappingFragment StoreEntitySet="Firmalar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirmaAd" ColumnName="FirmaAd" />
+          <ScalarProperty Name="KullaniciAd" ColumnName="KullaniciAd" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="YetkiliAd" ColumnName="YetkiliAd" />
+          <ScalarProperty Name="YetkiliSoyad" ColumnName="YetkiliSoyad" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="FirmaMail" ColumnName="FirmaMail" />
+          <ScalarProperty Name="VergiNo" ColumnName="VergiNo" />
+          <ScalarProperty Name="VergiDairesi" ColumnName="VergiDairesi" />
+          <ScalarProperty Name="OnayDurumu" ColumnName="OnayDurumu" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kampanyalar">
+      <EntityTypeMapping TypeName="TopalMartiModel.Kampanyalar">
+        <MappingFragment StoreEntitySet="Kampanyalar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BaslangicTarihi" ColumnName="BaslangicTarihi" />
+          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+          <ScalarProperty Name="KampanyaFiyati" ColumnName="KampanyaFiyati" />
+          <ScalarProperty Name="Stok" ColumnName="Stok" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="FirmaUrunID" ColumnName="FirmaUrunID" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategoriler">
+      <EntityTypeMapping TypeName="TopalMartiModel.Kategoriler">
+        <MappingFragment StoreEntitySet="Kategoriler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KategoriAd" ColumnName="KategoriAd" />
+          <ScalarProperty Name="UstKategoriID" ColumnName="UstKategoriID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilar">
+      <EntityTypeMapping TypeName="TopalMartiModel.Kullanicilar">
+        <MappingFragment StoreEntitySet="Kullanicilar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KullaniciAd" ColumnName="KullaniciAd" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="IkinciAd" ColumnName="IkinciAd" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="TcKimlikNo" ColumnName="TcKimlikNo" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ozellik">
+      <EntityTypeMapping TypeName="TopalMartiModel.Ozellik">
+        <MappingFragment StoreEntitySet="Ozellik">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OzellikAdi" ColumnName="OzellikAdi" />
+          <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
+          <ScalarProperty Name="AltKategoriID" ColumnName="AltKategoriID" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiparisDetaylari">
+      <EntityTypeMapping TypeName="TopalMartiModel.SiparisDetaylari">
+        <MappingFragment StoreEntitySet="SiparisDetaylari">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SatisID" ColumnName="SatisID" />
+          <ScalarProperty Name="FirmaUrunID" ColumnName="FirmaUrunID" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Siparisler">
+      <EntityTypeMapping TypeName="TopalMartiModel.Siparisler">
+        <MappingFragment StoreEntitySet="Siparisler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+          <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+          <ScalarProperty Name="SiparisDurumu" ColumnName="SiparisDurumu" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urun_AltOzellik">
+      <EntityTypeMapping TypeName="TopalMartiModel.Urun_AltOzellik">
+        <MappingFragment StoreEntitySet="Urun_AltOzellik">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="AltOzellikID" ColumnName="AltOzellikID" />
+          <ScalarProperty Name="Varmi" ColumnName="Varmi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urun_Ozellik">
+      <EntityTypeMapping TypeName="TopalMartiModel.Urun_Ozellik">
+        <MappingFragment StoreEntitySet="Urun_Ozellik">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="OzellikID" ColumnName="OzellikID" />
+          <ScalarProperty Name="Varmi" ColumnName="Varmi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urunler">
+      <EntityTypeMapping TypeName="TopalMartiModel.Urunler">
+        <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunUstKategoriNo" ColumnName="UrunUstKategoriNo" />
+          <ScalarProperty Name="UrunKategoriNo" ColumnName="UrunKategoriNo" />
+          <ScalarProperty Name="UrunAltKategoriNo" ColumnName="UrunAltKategoriNo" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UstKategoriler">
+      <EntityTypeMapping TypeName="TopalMartiModel.UstKategoriler">
+        <MappingFragment StoreEntitySet="UstKategoriler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UstKategoriAd" ColumnName="UstKategoriAd" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yorumlar">
+      <EntityTypeMapping TypeName="TopalMartiModel.Yorumlar">
+        <MappingFragment StoreEntitySet="Yorumlar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Yorum" ColumnName="Yorum" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="FirmaUrunID" ColumnName="FirmaUrunID" />
+          <ScalarProperty Name="Silindi" ColumnName="Silindi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

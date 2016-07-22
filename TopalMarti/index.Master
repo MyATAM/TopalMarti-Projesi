@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="index.master.cs" Inherits="TopalMarti.index" %>
+
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Topal Martı</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>    
+    <link href="Model/index.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            float: left;
+            width: 130px;
+            height: 50px;
+        }
+    </style>
+    </head>
+<body>
+    <form id="form1" runat="server">
+    <div id="body">
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+        <center>
+        <div id="banner">
+            <div class="parca"></div>
+            <div class="parca"></div>
+        </div>
+            <div id="content">
+                <div class="sol">
+                    <div style="float:left;margin-left:30px;margin-top:10px">
+                        <asp:ImageButton ID="imgbtnAnasayfa" runat="server" ImageUrl="~/Model/img/anasayfa.jpg" Height="57px" Width="181px" OnClick="ImageButton1_Click"></asp:ImageButton>
+                    </div>
+                    <div style="float:left;margin:20px">
+                        <asp:Panel ID="pnlKategoriler" runat="server" Visible="false">                            
+                        <asp:DropDownList ID="ddlKategoriler" runat="server" Width="25px" OnSelectedIndexChanged="ddlKategoriler_SelectedIndexChanged" AutoPostBack="True" CssClass="ddl"></asp:DropDownList>
+                        </asp:Panel>
+                    </div>
+                    
+                </div>
+                <div class="orta">
+                    <asp:Panel ID="pblArama" runat="server" Visible="false">
+                        <div style="float:left;margin-top:20px;margin-left:50px;width:407px">
+                            <asp:TextBox ID="txtGenisArama" runat="server" Height="25px" Width="407px"></asp:TextBox>
+                            <asp:TextBoxWatermarkExtender ID="txtGenisArama_TextBoxWatermarkExtender" runat="server" Enabled="True" TargetControlID="txtGenisArama" WatermarkText="... için alışveriş yapıyorum." WatermarkCssClass="tiklanmadi"></asp:TextBoxWatermarkExtender>
+                        </div>
+                        <div style="float:left;margin-top:20px;margin-left:3px">
+                             <asp:ImageButton ID="imgbtnArama" runat="server" Width="30px" Height="30px" ImageUrl="~/Model/img/arama.jpg" OnClick="imgbtnArama_Click"></asp:ImageButton>
+                        </div>
+                    </asp:Panel>
+                    <asp:Panel ID="pnlsepet" runat="server" Visible="false">
+                        <img src="Model/img/sepetonay2.jpg" width="567" height="65" />
+                    </asp:Panel>
+                    <asp:Panel ID="pnladres" runat="server" Visible="false">
+                         <img src="Model/img/adresonay2.jpg" width="567" height="65" />
+                    </asp:Panel>
+                    <asp:Panel ID="pnlodeme" runat="server" Visible="false">
+                        <img src="Model/img/odeme2.jpg" width="567" height="65" />
+                    </asp:Panel>
+
+                </div>
+                <div class="sag">
+                    <div style="margin-top:15px;margin-left:20px" class="auto-style1">
+                        <asp:ImageButton ID="imgbtnSepet" runat="server" ImageUrl="~/Model/img/sepet1.jpg" OnClick="imgbtnSepet_Click"></asp:ImageButton>
+
+                    </div>                    
+                    <asp:Panel ID="pnlKayitOl" runat="server">
+                        <div style="float:left;margin-top:15px;width:120px;height:50px">
+                            <asp:ImageButton ID="imgbtnKayitOl" runat="server" ImageUrl="~/Model/img/kayit.jpg" OnClick="imgbtnKayitOl_Click"></asp:ImageButton>
+                        </div>
+                    <div style="float:left;margin-top:16px;width:120px;height:50px">                        
+                            <asp:ImageButton ID="imgbtnGirisYap" runat="server" ImageUrl="~/Model/img/GirisYap.jpg" OnClick="imgbtnGirisYap_Click"></asp:ImageButton>
+                    </div>
+                    </asp:Panel>
+
+                    <asp:Panel ID="pnlcikisyap" runat="server" Visible="false">
+                    <div style="float:left;margin-top:15px;width:120px;height:50px">     
+                         <asp:ImageButton ID="imgbtnHesabim" runat="server" ImageUrl="~/Model/img/Hesabim.jpg" OnClick="imgbtnHesabim_Click"></asp:ImageButton>                
+                    </div>
+                    <div style="float:left;margin-top:19px;width:120px;height:50px">                      
+                         <asp:ImageButton ID="imbntnCikisYap" runat="server" ImageUrl="~/Model/img/CikisYap.jpg" OnClick="imbntnCikisYap_Click"></asp:ImageButton>                     
+                    </div>
+                    </asp:Panel>
+                </div>
+            </div>
+        </center>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">            
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

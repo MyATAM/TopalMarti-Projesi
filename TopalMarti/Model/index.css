@@ -1,0 +1,170 @@
+﻿#body{
+    width:1900px;
+    height:auto;
+    background-color:lightgray;
+    
+}
+
+#banner{
+    width:1300px;
+    height:160px;    
+}
+
+#banner .parca{
+    height:80px;
+    background-color:lightblue
+}
+
+#content{
+    width:1300px;
+    height:75px;
+    background-color:white
+}
+
+.bluebutton {
+    background: #ffffff url(img/buttonblue.png) repeat-x;
+    color: white;
+}
+
+#content .sol{
+    width:300px;
+    float:left;
+    height:75px
+}
+
+#content .ortasag{
+    width:1000px;
+    float:left;
+    height:80px
+}
+#content .orta{
+    width:600px;
+    float:left;
+    height:75px;
+}
+
+#content .sag{
+    width:400px;
+    float:left;
+    height:75px
+}
+
+.anasayfa{
+
+}
+
+.anasayfa a{
+    color:black;
+    display:block;
+    text-decoration:none;
+
+}
+
+.anasayfa a:hover{
+    color:lightcoral;
+    text-decoration:none;
+}
+
+.girisyap{
+}
+
+.girisyap a{
+    color:black;
+    display:block;
+    text-decoration:none;
+}
+
+.girisyap a:hover{
+    color:orange;
+    text-decoration:none;
+
+}
+
+.kayitol{
+}
+
+.kayitol a{
+    color:black;
+    display:block;
+    text-decoration:none;
+}
+
+.kayitol a:hover{
+    color:orange;    
+    text-decoration:none;
+}
+
+.tiklanmadi{
+            color:gray;
+            background-color:lightgray;
+}
+
+#homebody {
+    width: 1900px;
+    height: auto;
+    background-color: lightgray;
+}
+
+#icyapi{
+    width:1300px;
+    height:auto;
+}
+
+#icyapi .sol{
+    width:300px;
+    float:left;
+}
+
+#icyapi .sag{
+    width:1000px;
+    float:left;
+    
+}
+
+#icyapi .kampanya{
+    clear:both;
+    width:1300px;
+    background-color: white;
+}
+
+.dll{
+    border:2px solid orange;
+    height:14px;
+    font-size:12px;
+    font-family:'Comic Sans MS';
+
+
+}
+
+.left {
+margin-top: 10px;
+float: left;
+width: 300px;
+line-height: 20px;
+font-size:larger;
+}
+.left h2 {
+margin-top: 10px;
+font: bold 16px Verdana, 'Trebuchet MS', Sans-serif;
+line-height: 30px;
+height: 30px;
+color: #fff;
+padding-left: 10px;
+}
+.left ul  {
+color: #aaa;
+text-align: left;
+margin: 3px 0 8px 0; 
+padding-left: 10px;
+text-decoration: none;	
+list-style-type:none;	
+}
+.left ul li {
+padding: 2px 0 2px 0px;
+margin: 0 2px;	
+}
+.left ul a {
+font-weight: 600;
+color: #2A84E5;
+}
+.left ul a:hover { color : #333; }

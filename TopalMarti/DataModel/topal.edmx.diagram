@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="da73b4d99f9d4d289ad118de46a422b5" Name="Diagram1">
+        <EntityTypeShape EntityType="TopalMartiModel.Adresler" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.AltKategoriler" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.AltOzellik" Width="1.5" PointX="9.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Firma_Urunler" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Firmalar" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Kampanyalar" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Kategoriler" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Kullanicilar" Width="1.5" PointX="8.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Ozellik" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.SiparisDetaylari" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Siparisler" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Urun_AltOzellik" Width="1.5" PointX="12" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Urun_Ozellik" Width="1.5" PointX="9.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Urunler" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.UstKategoriler" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TopalMartiModel.Yorumlar" Width="1.5" PointX="10.5" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="TopalMartiModel.FK_AltKategoriler_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_Ozellik_AltKategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_AltOzellik_Ozellik" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_Urun_AltOzellik_AltOzellik" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_Firma_Urunler_Firmalar" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_Firma_Urunler_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_SiparisDetaylari_Firma_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_Yorumlar_Firma_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_Kategoriler_UstKategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_Ozellik_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_Yorumlar_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_Urun_Ozellik_Ozellik" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_SiparisDetaylari_Siparisler" ManuallyRouted="false" />
+        <AssociationConnector Association="TopalMartiModel.FK_Urunler_UstKategoriler" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

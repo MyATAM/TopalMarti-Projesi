@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="TopalMarti.Firma.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Topal Martı Firma Giriş Paneli</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Model/index.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="body" style="background-color:sienna">
+        <center>
+        <div id="banner">
+            <div class="parca"></div>
+            <div class="parca"></div>
+        </div>
+            <div id="content">
+                <div class="sol">
+                    <div style="float:left;margin-left:30px;margin-top:10px">
+                        <asp:ImageButton ID="imgbtnAnasayfa" runat="server" ImageUrl="~/Model/img/anasayfa.jpg" Height="57px" Width="181px" OnClick="imgbtnAnasayfa_Click"></asp:ImageButton>
+                    </div>
+                    
+                </div>
+                <div class="orta" style="margin-top:15px;font-family:'Times New Roman';height:53px">
+                    <h3 id="ustbaslik">TOPAL MARTI FİRMA GİRİŞ EKRANI</h3>
+                    
+                </div>
+                <div class="sag">                                       
+                    
+                    <asp:Panel ID="pnlcikisyap" runat="server" Visible="false">
+                    <div style="float:left;margin-top:15px;width:120px;height:50px;margin-left:84px">     
+                         <asp:ImageButton ID="imgbtnHesabim" runat="server" ImageUrl="~/Model/img/Hesabim.jpg" OnClick="imgbtnHesabim_Click"></asp:ImageButton>                
+                    </div>
+                    <div style="float:left;margin-top:19px;width:120px;height:50px">                      
+                         <asp:ImageButton ID="imbntnCikisYap" runat="server" ImageUrl="~/Model/img/CikisYap.jpg" OnClick="imbntnCikisYap_Click"></asp:ImageButton>                     
+                    </div>
+                    </asp:Panel>
+                </div>
+            </div>
+
+            
+        
+        <div style="width:1300px">
+            <div class="left" style="float:left">
+                <asp:Panel ID="pnlAdminIslemleri" runat="server" Visible="false">
+                    <h2>Firma İşlemleri</h2>
+                <ul style="text-align:left">
+                    <li><a href="UrunEkle.aspx">Ürün İşlemleri</a></li>
+                    <li><a href="KampanyaIslemleri.aspx">Kampanya İşlemleri</a></li>
+                    <li><a href="SatisOnay.aspx">Sipariş Onay İşlemleri</a></li>
+                    <li><a href="SatisIslemleri.aspx">Satış Görüntüleme İşlemleri</a></li>
+                </ul></asp:Panel>
+            </div>
+        
+            <div style="float:left;width:900px">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                </asp:ContentPlaceHolder>
+            </div>
+            </div>
+        </center>
+    </div>
+    </form>
+</body>
+</html>

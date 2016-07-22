@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TopalMartiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adresler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Il" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ilce" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KullaniciID" Type="Int32" Nullable="false" />
+    <Property Name="FirmaID" Type="Int32" Nullable="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AltKategoriler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AltKategoriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KategoriID" Type="Int32" Nullable="false" />
+    <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Kategoriler" Relationship="Self.FK_AltKategoriler_Kategoriler" FromRole="AltKategoriler" ToRole="Kategoriler" />
+    <NavigationProperty Name="Ozellik" Relationship="Self.FK_Ozellik_AltKategoriler" FromRole="AltKategoriler" ToRole="Ozellik" />
+  </EntityType>
+  <EntityType Name="AltOzellik">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AltOzellikAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OzellikID" Type="Int32" Nullable="false" />
+    <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Ozellik" Relationship="Self.FK_AltOzellik_Ozellik" FromRole="AltOzellik" ToRole="Ozellik" />
+    <NavigationProperty Name="Urun_AltOzellik" Relationship="Self.FK_Urun_AltOzellik_AltOzellik" FromRole="AltOzellik" ToRole="Urun_AltOzellik" />
+  </EntityType>
+  <EntityType Name="Firma_Urunler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirmaNo" Type="Int32" Nullable="false" />
+    <Property Name="UrunID" Type="Int32" Nullable="false" />
+    <Property Name="Stok" Type="Int32" Nullable="false" />
+    <Property Name="BirimFiyat" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="UrunBilgisi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunResimYolu1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunResimYolu2" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Firmalar" Relationship="Self.FK_Firma_Urunler_Firmalar" FromRole="Firma_Urunler" ToRole="Firmalar" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Firma_Urunler_Urunler" FromRole="Firma_Urunler" ToRole="Urunler" />
+    <NavigationProperty Name="SiparisDetaylari" Relationship="Self.FK_SiparisDetaylari_Firma_Urunler" FromRole="Firma_Urunler" ToRole="SiparisDetaylari" />
+    <NavigationProperty Name="Yorumlar" Relationship="Self.FK_Yorumlar_Firma_Urunler" FromRole="Firma_Urunler" ToRole="Yorumlar" />
+  </EntityType>
+  <EntityType Name="Firmalar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirmaAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KullaniciAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YetkiliAd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="YetkiliSoyad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirmaMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VergiNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VergiDairesi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OnayDurumu" Type="Boolean" Nullable="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Firma_Urunler" Relationship="Self.FK_Firma_Urunler_Firmalar" FromRole="Firmalar" ToRole="Firma_Urunler" />
+  </EntityType>
+  <EntityType Name="Kampanyalar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BaslangicTarihi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BitisTarihi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KampanyaFiyati" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Stok" Type="Int32" Nullable="false" />
+    <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FirmaUrunID" Type="Int32" Nullable="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kategoriler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UstKategoriID" Type="Int32" Nullable="false" />
+    <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AltKategoriler" Relationship="Self.FK_AltKategoriler_Kategoriler" FromRole="Kategoriler" ToRole="AltKategoriler" />
+    <NavigationProperty Name="UstKategoriler" Relationship="Self.FK_Kategoriler_UstKategoriler" FromRole="Kategoriler" ToRole="UstKategoriler" />
+    <NavigationProperty Name="Ozellik" Relationship="Self.FK_Ozellik_Kategoriler" FromRole="Kategoriler" ToRole="Ozellik" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IkinciAd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Soyad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TcKimlikNo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <Property Name="Admin" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Yorumlar" Relationship="Self.FK_Yorumlar_Kullanicilar" FromRole="Kullanicilar" ToRole="Yorumlar" />
+  </EntityType>
+  <EntityType Name="Ozellik">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OzellikAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KategoriID" Type="Int32" Nullable="false" />
+    <Property Name="AltKategoriID" Type="Int32" Nullable="false" />
+    <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AltKategoriler" Relationship="Self.FK_Ozellik_AltKategoriler" FromRole="Ozellik" ToRole="AltKategoriler" />
+    <NavigationProperty Name="AltOzellik" Relationship="Self.FK_AltOzellik_Ozellik" FromRole="Ozellik" ToRole="AltOzellik" />
+    <NavigationProperty Name="Kategoriler" Relationship="Self.FK_Ozellik_Kategoriler" FromRole="Ozellik" ToRole="Kategoriler" />
+    <NavigationProperty Name="Urun_Ozellik" Relationship="Self.FK_Urun_Ozellik_Ozellik" FromRole="Ozellik" ToRole="Urun_Ozellik" />
+  </EntityType>
+  <EntityType Name="SiparisDetaylari">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SatisID" Type="Int32" Nullable="false" />
+    <Property Name="FirmaUrunID" Type="Int32" Nullable="false" />
+    <Property Name="Adet" Type="Int32" Nullable="false" />
+    <Property Name="BirimFiyat" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Tutar" Type="Decimal" Precision="19" Scale="4" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Firma_Urunler" Relationship="Self.FK_SiparisDetaylari_Firma_Urunler" FromRole="SiparisDetaylari" ToRole="Firma_Urunler" />
+    <NavigationProperty Name="Siparisler" Relationship="Self.FK_SiparisDetaylari_Siparisler" FromRole="SiparisDetaylari" ToRole="Siparisler" />
+  </EntityType>
+  <EntityType Name="Siparisler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KullaniciID" Type="Int32" Nullable="false" />
+    <Property Name="Tutar" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Miktar" Type="Int32" Nullable="false" />
+    <Property Name="TeslimTarihi" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SiparisDurumu" Type="Byte" Nullable="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="SiparisDetaylari" Relationship="Self.FK_SiparisDetaylari_Siparisler" FromRole="Siparisler" ToRole="SiparisDetaylari" />
+  </EntityType>
+  <EntityType Name="Urun_AltOzellik">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" Nullable="false" />
+    <Property Name="AltOzellikID" Type="Int32" Nullable="false" />
+    <Property Name="Varmi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AltOzellik" Relationship="Self.FK_Urun_AltOzellik_AltOzellik" FromRole="Urun_AltOzellik" ToRole="AltOzellik" />
+  </EntityType>
+  <EntityType Name="Urun_Ozellik">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" Nullable="false" />
+    <Property Name="OzellikID" Type="Int32" Nullable="false" />
+    <Property Name="Varmi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Ozellik" Relationship="Self.FK_Urun_Ozellik_Ozellik" FromRole="Urun_Ozellik" ToRole="Ozellik" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunKodu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UrunUstKategoriNo" Type="Int32" Nullable="false" />
+    <Property Name="UrunKategoriNo" Type="Int32" Nullable="false" />
+    <Property Name="UrunAltKategoriNo" Type="Int32" Nullable="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Firma_Urunler" Relationship="Self.FK_Firma_Urunler_Urunler" FromRole="Urunler" ToRole="Firma_Urunler" />
+    <NavigationProperty Name="UstKategoriler" Relationship="Self.FK_Urunler_UstKategoriler" FromRole="Urunler" ToRole="UstKategoriler" />
+  </EntityType>
+  <EntityType Name="UstKategoriler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UstKategoriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Kategoriler" Relationship="Self.FK_Kategoriler_UstKategoriler" FromRole="UstKategoriler" ToRole="Kategoriler" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Urunler_UstKategoriler" FromRole="UstKategoriler" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Yorumlar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Yorum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KullaniciID" Type="Int32" Nullable="false" />
+    <Property Name="FirmaUrunID" Type="Int32" Nullable="false" />
+    <Property Name="Silindi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Firma_Urunler" Relationship="Self.FK_Yorumlar_Firma_Urunler" FromRole="Yorumlar" ToRole="Firma_Urunler" />
+    <NavigationProperty Name="Kullanicilar" Relationship="Self.FK_Yorumlar_Kullanicilar" FromRole="Yorumlar" ToRole="Kullanicilar" />
+  </EntityType>
+  <Association Name="FK_AltKategoriler_Kategoriler">
+    <End Role="Kategoriler" Type="Self.Kategoriler" Multiplicity="1" />
+    <End Role="AltKategoriler" Type="Self.AltKategoriler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoriler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AltKategoriler">
+        <PropertyRef Name="KategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ozellik_AltKategoriler">
+    <End Role="AltKategoriler" Type="Self.AltKategoriler" Multiplicity="1" />
+    <End Role="Ozellik" Type="Self.Ozellik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AltKategoriler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ozellik">
+        <PropertyRef Name="AltKategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AltOzellik_Ozellik">
+    <End Role="Ozellik" Type="Self.Ozellik" Multiplicity="1" />
+    <End Role="AltOzellik" Type="Self.AltOzellik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ozellik">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AltOzellik">
+        <PropertyRef Name="OzellikID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urun_AltOzellik_AltOzellik">
+    <End Role="AltOzellik" Type="Self.AltOzellik" Multiplicity="1" />
+    <End Role="Urun_AltOzellik" Type="Self.Urun_AltOzellik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AltOzellik">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Urun_AltOzellik">
+        <PropertyRef Name="AltOzellikID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Firma_Urunler_Firmalar">
+    <End Role="Firmalar" Type="Self.Firmalar" Multiplicity="1" />
+    <End Role="Firma_Urunler" Type="Self.Firma_Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Firmalar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Firma_Urunler">
+        <PropertyRef Name="FirmaNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Firma_Urunler_Urunler">
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="1" />
+    <End Role="Firma_Urunler" Type="Self.Firma_Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Firma_Urunler">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SiparisDetaylari_Firma_Urunler">
+    <End Role="Firma_Urunler" Type="Self.Firma_Urunler" Multiplicity="1" />
+    <End Role="SiparisDetaylari" Type="Self.SiparisDetaylari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Firma_Urunler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SiparisDetaylari">
+        <PropertyRef Name="FirmaUrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yorumlar_Firma_Urunler">
+    <End Role="Firma_Urunler" Type="Self.Firma_Urunler" Multiplicity="1" />
+    <End Role="Yorumlar" Type="Self.Yorumlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Firma_Urunler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Yorumlar">
+        <PropertyRef Name="FirmaUrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kategoriler_UstKategoriler">
+    <End Role="UstKategoriler" Type="Self.UstKategoriler" Multiplicity="1" />
+    <End Role="Kategoriler" Type="Self.Kategoriler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UstKategoriler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kategoriler">
+        <PropertyRef Name="UstKategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ozellik_Kategoriler">
+    <End Role="Kategoriler" Type="Self.Kategoriler" Multiplicity="1" />
+    <End Role="Ozellik" Type="Self.Ozellik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoriler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ozellik">
+        <PropertyRef Name="KategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yorumlar_Kullanicilar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="Yorumlar" Type="Self.Yorumlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Yorumlar">
+        <PropertyRef Name="KullaniciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urun_Ozellik_Ozellik">
+    <End Role="Ozellik" Type="Self.Ozellik" Multiplicity="1" />
+    <End Role="Urun_Ozellik" Type="Self.Urun_Ozellik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ozellik">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Urun_Ozellik">
+        <PropertyRef Name="OzellikID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SiparisDetaylari_Siparisler">
+    <End Role="Siparisler" Type="Self.Siparisler" Multiplicity="1" />
+    <End Role="SiparisDetaylari" Type="Self.SiparisDetaylari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Siparisler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SiparisDetaylari">
+        <PropertyRef Name="SatisID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_UstKategoriler">
+    <End Role="UstKategoriler" Type="Self.UstKategoriler" Multiplicity="1" />
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UstKategoriler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="UrunUstKategoriNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TopalMartiEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adresler" EntityType="Self.Adresler" />
+    <EntitySet Name="AltKategoriler" EntityType="Self.AltKategoriler" />
+    <EntitySet Name="AltOzellik" EntityType="Self.AltOzellik" />
+    <EntitySet Name="Firma_Urunler" EntityType="Self.Firma_Urunler" />
+    <EntitySet Name="Firmalar" EntityType="Self.Firmalar" />
+    <EntitySet Name="Kampanyalar" EntityType="Self.Kampanyalar" />
+    <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+    <EntitySet Name="Ozellik" EntityType="Self.Ozellik" />
+    <EntitySet Name="SiparisDetaylari" EntityType="Self.SiparisDetaylari" />
+    <EntitySet Name="Siparisler" EntityType="Self.Siparisler" />
+    <EntitySet Name="Urun_AltOzellik" EntityType="Self.Urun_AltOzellik" />
+    <EntitySet Name="Urun_Ozellik" EntityType="Self.Urun_Ozellik" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+    <EntitySet Name="UstKategoriler" EntityType="Self.UstKategoriler" />
+    <EntitySet Name="Yorumlar" EntityType="Self.Yorumlar" />
+    <AssociationSet Name="FK_AltKategoriler_Kategoriler" Association="Self.FK_AltKategoriler_Kategoriler">
+      <End Role="Kategoriler" EntitySet="Kategoriler" />
+      <End Role="AltKategoriler" EntitySet="AltKategoriler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ozellik_AltKategoriler" Association="Self.FK_Ozellik_AltKategoriler">
+      <End Role="AltKategoriler" EntitySet="AltKategoriler" />
+      <End Role="Ozellik" EntitySet="Ozellik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AltOzellik_Ozellik" Association="Self.FK_AltOzellik_Ozellik">
+      <End Role="Ozellik" EntitySet="Ozellik" />
+      <End Role="AltOzellik" EntitySet="AltOzellik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urun_AltOzellik_AltOzellik" Association="Self.FK_Urun_AltOzellik_AltOzellik">
+      <End Role="AltOzellik" EntitySet="AltOzellik" />
+      <End Role="Urun_AltOzellik" EntitySet="Urun_AltOzellik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Firma_Urunler_Firmalar" Association="Self.FK_Firma_Urunler_Firmalar">
+      <End Role="Firmalar" EntitySet="Firmalar" />
+      <End Role="Firma_Urunler" EntitySet="Firma_Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Firma_Urunler_Urunler" Association="Self.FK_Firma_Urunler_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Firma_Urunler" EntitySet="Firma_Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SiparisDetaylari_Firma_Urunler" Association="Self.FK_SiparisDetaylari_Firma_Urunler">
+      <End Role="Firma_Urunler" EntitySet="Firma_Urunler" />
+      <End Role="SiparisDetaylari" EntitySet="SiparisDetaylari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yorumlar_Firma_Urunler" Association="Self.FK_Yorumlar_Firma_Urunler">
+      <End Role="Firma_Urunler" EntitySet="Firma_Urunler" />
+      <End Role="Yorumlar" EntitySet="Yorumlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kategoriler_UstKategoriler" Association="Self.FK_Kategoriler_UstKategoriler">
+      <End Role="UstKategoriler" EntitySet="UstKategoriler" />
+      <End Role="Kategoriler" EntitySet="Kategoriler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ozellik_Kategoriler" Association="Self.FK_Ozellik_Kategoriler">
+      <End Role="Kategoriler" EntitySet="Kategoriler" />
+      <End Role="Ozellik" EntitySet="Ozellik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yorumlar_Kullanicilar" Association="Self.FK_Yorumlar_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Yorumlar" EntitySet="Yorumlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urun_Ozellik_Ozellik" Association="Self.FK_Urun_Ozellik_Ozellik">
+      <End Role="Ozellik" EntitySet="Ozellik" />
+      <End Role="Urun_Ozellik" EntitySet="Urun_Ozellik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SiparisDetaylari_Siparisler" Association="Self.FK_SiparisDetaylari_Siparisler">
+      <End Role="Siparisler" EntitySet="Siparisler" />
+      <End Role="SiparisDetaylari" EntitySet="SiparisDetaylari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_UstKategoriler" Association="Self.FK_Urunler_UstKategoriler">
+      <End Role="UstKategoriler" EntitySet="UstKategoriler" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
